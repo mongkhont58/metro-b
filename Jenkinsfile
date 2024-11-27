@@ -2,29 +2,54 @@ pipeline {
     agent any
 
     stages {
-        stages {
-            stage('Checkout') {
-                steps {
-                    checkout scmGit(branches: [[name: 'main']], 
-                                    userRemoteConfigs: [[url: 'https://github.com/mongkhont58/metro-b.git']])
-                }
+        stage('Clone Repository') {
+            steps {
+                git credentialsId: 'squ_4b4d2466ea7e3ac0a0bdd7e06f176ae83f055b14', url: 'https://github.com/mongkhont58/metro-b.git'
+             }
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
+
+        stage('Lint') {
+            steps {
+                sh 'npm run lint'
+            }
+        }
+
+        stage('Run Tests') {
+            steps {
+                sh 'npm test'
             }
         }
 
         stage('Build') {
             steps {
-                git 'https://github.com/mongkhont58/metro-b.git'
-                sh "npm install"
+                sh 'npm run build'
             }
         }
 
-        stage('Scan') {
+        stage('Deploy') {
             steps {
-                withSonarQubeEnv(installationName: 'sq1') {
-                    sh "npm install sonar-scanner"
-                    sh 'npx sonar-scanner -X -X -Dsonar.projectKey=mywebapp'
-                }
+                echo 'Deploy stage placeholder.'
+                // Example deployment script
+                // sh './deploy.sh'
             }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline execution completed.'
+        }
+        success {
+            echo 'Build succeeded!'
+        }
+        failure {
+            echo 'Build failed. Check logs.'
         }
     }
 }

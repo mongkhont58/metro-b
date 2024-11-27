@@ -1,9 +1,9 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'NodeJS' // Configure Node.js in Jenkins (Manage Jenkins > Global Tool Configuration)
-    }
+    // tools {
+    //     nodejs 'NodeJS' // Configure Node.js in Jenkins (Manage Jenkins > Global Tool Configuration)
+    // }
 
     environment {
         SONAR_HOST_URL = 'http://192.168.100.65:9001' // Replace with your SonarQube URL

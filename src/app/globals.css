@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Sarabun';
+  src: url('../../public/fonts/Sarabun-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --background: #f7f9f5;
+  --foreground: #496488;
+  --primary:#00d610;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+body {
+  color:  var(--foreground);
+  background: var(--background);
+  font-family: 'Sarabun',Arial, Helvetica, sans-serif;
+}
+
+a {
+  color:  var(--foreground);
+  font-family: var(--sarabun-font);
+  outline: none;
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+.unset-link {
+  color: black;
+}
+
+.unset-link:hover {
+  color: black;
+}
+
+.header-nav {
+  color:  var(--foreground);
+  border: 1px solid transparent;
+  border-radius: 50px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+a.header-nav.flex.items-center.gap-2.py-2.active {
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}

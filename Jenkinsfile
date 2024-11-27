@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git 'https://github.com/mongkhont58/metro-police.git'
+                git 'https://github.com/mongkhont58/metro-b.git'
                 bat "npm install"
             }
         }

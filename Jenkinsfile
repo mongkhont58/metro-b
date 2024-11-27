@@ -2,10 +2,13 @@ pipeline {
     agent any
 
     stages {
-        stage ('Git Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/mongkhont58/metro-b.git'
+        stages {
+            stage('Checkout') {
+                steps {
+                    checkout scmGit(branches: [[name: 'main']], 
+                                    userRemoteConfigs: [[url: 'https://github.com/mongkhont58/metro-b.git']])
                 }
+            }
         }
 
         stage('Build') {

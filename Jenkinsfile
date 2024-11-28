@@ -30,7 +30,7 @@ pipeline {
         stage('Scan') {
             steps {
                 withSonarQubeEnv(installationName: 'sq1') {
-                    sh "npm install sonar-scanner"
+                    sh "npm install sonar-scanner --legacy-peer-deps"
                     sh 'npx sonar-scanner -X -X -D sonar.projectKey=my-nextjs-app'
                 }
             }

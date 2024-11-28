@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', credentialsId: 'squ_efe2b828a351e809efcc7c8e449ef50f2c6d1e58', url: 'https://github.com/mongkhont58/metro-b.git'
+                git branch: 'main', credentialsId: 'squ_6f123cd1dfe2c9e05bb3d3ce28830716aaed9fe6', url: 'https://github.com/mongkhont58/metro-b.git'
             }
         }
 

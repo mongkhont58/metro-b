@@ -16,7 +16,7 @@ pipeline {
             steps {
                 sh '''
                     which npm || echo "npm not found"
-                    npm install
+                    npm install --legacy-peer-deps
                 '''
             }
         }

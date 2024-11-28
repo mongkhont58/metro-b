@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        nodejs 'NodeJS' // Ensure Node.js is configured in Jenkins (Manage Jenkins > Global Tool Configuration)
+        nodejs 'Built-In Node' // Ensure Node.js is configured in Jenkins (Manage Jenkins > Global Tool Configuration)
     }
 
     environment {

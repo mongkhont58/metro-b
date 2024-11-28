@@ -1,14 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'Built-In Node' // Ensure Node.js is configured in Jenkins (Manage Jenkins > Global Tool Configuration)
-    }
-
-    environment {
-        NODE_ENV = 'production' // Set the environment for Node.js
-    }
-
     stages {
         stage('Clone Repository') {
             steps {

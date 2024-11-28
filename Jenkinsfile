@@ -1,8 +1,13 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'NodeJS' // Ensure Node.js is configured in Jenkins
+    stage('Review node and npm installations') {
+        steps {
+            nodejs(nodeJSInstallationName: 'Build-In Node') {
+            sh 'npm -v'  //substitute with your code
+            sh 'node -v'
+            }
+        }
     }
 
     stages {

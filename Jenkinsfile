@@ -1,15 +1,6 @@
 pipeline {
     agent any
 
-    stage('Review node and npm installations') {
-        steps {
-            nodejs(nodeJSInstallationName: 'Build-In Node') {
-            sh 'npm -v'  //substitute with your code
-            sh 'node -v'
-            }
-        }
-    }
-
     stages {
         stage('Checkout Code') {
             steps {

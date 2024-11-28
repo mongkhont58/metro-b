@@ -30,8 +30,8 @@ pipeline {
         stage('Scan') {
             steps {
                 withSonarQubeEnv(installationName: 'sq1') {
-                    bat "npm install sonar-scanner"
-                    bat 'npx sonar-scanner -X -X -D sonar.projectKey=my-nextjs-app'
+                    sh "npm install sonar-scanner"
+                    sh 'npx sonar-scanner -X -X -D sonar.projectKey=my-nextjs-app'
                 }
             }
         }

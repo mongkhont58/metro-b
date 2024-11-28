@@ -1,5 +1,16 @@
 pipeline {
     agent any
+    
+    stages {
+        stage('Setup Node.js') {
+            steps {
+                sh '''
+                which node || curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+                apt-get install -y nodejs
+                '''
+            }
+        }
+    }
 
     stages {
         stage('Checkout Code') {

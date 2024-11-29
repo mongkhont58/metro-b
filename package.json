@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start -p 42401",
     "lint": "next lint",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.5",

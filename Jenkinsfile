@@ -8,7 +8,8 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', credentialsId: 'squ_6f123cd1dfe2c9e05bb3d3ce28830716aaed9fe6', url: 'https://github.com/mongkhont58/metro-b.git'
+                git branch: 'main',
+                url: 'https://github.com/mongkhont58/metro-b.git'
             }
         }
 
@@ -31,7 +32,7 @@ pipeline {
             steps {
                 withSonarQubeEnv(installationName: 'sq1') {
                     sh "npm install sonar-scanner --legacy-peer-deps"
-                    sh 'npx sonar-scanner -X -X -D sonar.projectKey=my-nextjs-app'
+                    sh 'npx sonar-scanner -X'
                 }
             }
         }

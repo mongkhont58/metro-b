@@ -50,15 +50,12 @@ const Home: NextPage = () => {
 
   return (
     <div>
-      123
-    </div>
-  )
-
-  return (
-    <div>
       {data?.slide &&
         <div className='h-60 lg:h-[45rem]'>
           <CarouselCustomNavigation list={data.slide} />
+          <div>
+            123
+          </div>
         </div>
       }
       <div className='flex flex-col items-center justify-center gap-5 lg:gap-10 pb-5 lg:pb-10 mt-8'>

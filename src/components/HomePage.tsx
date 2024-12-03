@@ -50,6 +50,12 @@ const Home: NextPage = () => {
 
   return (
     <div>
+      123
+    </div>
+  )
+
+  return (
+    <div>
       {data?.slide &&
         <div className='h-60 lg:h-[45rem]'>
           <CarouselCustomNavigation list={data.slide} />
